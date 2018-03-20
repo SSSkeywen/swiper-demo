@@ -9,6 +9,7 @@
 	    <link rel="stylesheet" href="css/swiper.min.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index_zdy.css"/>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		 <style>
     html, body {
         position: relative;
@@ -415,31 +416,38 @@
 	            	</div>
             	</div>
         	</div>
-        	<audio id="musicAdio" preload="load" autoplay loop="loop">
+        	<!--<audio id="musicAdio" preload="load" autoplay loop="loop">
 				<source src="sound/bgm-track1-cut.mp3"></source>
-			</audio>
+			</audio>-->
 	</body>
 	<script type="text/javascript">
-		audio = document.getElementById("musicAdio");
-	audio.play();
-		    function audioAutoPlay(id){
-        var audio = document.getElementById(id);
-        audio.play();
-        document.addEventListener("WeixinJSBridgeReady", function () {
-                audio.play();
-        }, false);
-    }
-    audioAutoPlay("musicAdio");
-    function musicOne(){
-    		audio.play();
-    		setTimeout(musicOne,1000)
-    }
-    musicOne();
-	//循环播放
-        audio.onended = function () {
-            audio.load();
-            audio.play();
-        }
+		var bgmusic=new Audio();
+    bgmusic.setAttribute('src','http://static.yerhu.com/201706/audio/taiping.mp3')
+    bgmusic.setAttribute('loop','loop')
+    document.addEventListener("WeixinJSBridgeReady", function() {
+        bgmusic.play();
+    })
+    bgmusic.play();
+//		audio = document.getElementById("musicAdio");
+//	audio.play();
+//		    function audioAutoPlay(id){
+//      var audio = document.getElementById(id);
+//      audio.play();
+//      document.addEventListener("WeixinJSBridgeReady", function () {
+//              audio.play();
+//      }, false);
+//  }
+//  audioAutoPlay("musicAdio");
+//  function musicOne(){
+//  		audio.play();
+//  		setTimeout(musicOne,1000)
+//  }
+//  musicOne();
+//	//循环播放
+//      audio.onended = function () {
+//          audio.load();
+//          audio.play();
+//      }
 	</script>
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container-h', {
